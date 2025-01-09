@@ -1,5 +1,6 @@
 ### Estrutura de Pastas
 .
+
 ├── .docs/                  # Pasta para armazenar a documentação do Swagger
 ├── internal/               # Código fonte da aplicação
 |   ├── domain/             # struck de domínio             
