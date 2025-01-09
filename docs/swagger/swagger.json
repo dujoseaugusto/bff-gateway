@@ -1,0 +1,44 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/user-content": {
+            "get": {
+                "description": "Obtém todos as listas dinamicas",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user-content"
+                ],
+                "summary": "Retorna todos os usuários",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/bff-gatway_internal_handlers_models.User"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "bff-gatway_internal_handlers_models.User": {
+            "type": "object",
+            "properties": {
+                "user-content": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

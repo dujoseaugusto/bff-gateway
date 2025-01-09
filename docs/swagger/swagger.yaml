@@ -1,0 +1,27 @@
+definitions:
+  bff-gatway_internal_handlers_models.User:
+    properties:
+      user-content:
+        items:
+          type: integer
+        type: array
+    type: object
+info:
+  contact: {}
+paths:
+  /user-content:
+    get:
+      consumes:
+      - application/json
+      description: Obtém todos as listas dinamicas
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/bff-gatway_internal_handlers_models.User'
+      summary: Retorna todos os usuários
+      tags:
+      - user-content
+swagger: "2.0"

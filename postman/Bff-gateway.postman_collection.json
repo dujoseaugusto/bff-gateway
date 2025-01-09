@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "9bfc2654-60d4-4a55-b614-a8e82931d836",
+		"name": "Bff-gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "auth-login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    if (pm.response.code === 200) {",
+									"        let responseBody = pm.response.text();",
+									"",
+									"        let cleanedResponseBody = responseBody.replace('Bearer ', '');",
+									"        pm.environment.set(\"token\", cleanedResponseBody);",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"payload\": {\n    \"email\": \"jose.augusto@guide121.com\",\n    \"password\": \"cznn@p9#iXGz\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{bff-gateway}}/auth/login",
+							"host": [
+								"{{bff-gateway}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth-get",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"if (pm.response.code === 200) {",
+									"    var responseBody = pm.response.json();",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{bff-gateway}}/auth/users",
+							"host": [
+								"{{bff-gateway}}"
+							],
+							"path": [
+								"auth",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth-delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"if (pm.response.code === 200) {",
+									"    var responseBody = pm.response.json();",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{bff-gateway}}/auth/users/6655597b839aa67174bba256",
+							"host": [
+								"{{bff-gateway}}"
+							],
+							"path": [
+								"auth",
+								"users",
+								"6655597b839aa67174bba256"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth-get-user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"if (pm.response.code === 200) {",
+									"    var responseBody = pm.response.json();",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{bff-gateway}}/auth/users/6655597b839aa67174bba256",
+							"host": [
+								"{{bff-gateway}}"
+							],
+							"path": [
+								"auth",
+								"users",
+								"6655597b839aa67174bba256"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth-register-user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"if (pm.response.code === 200) {",
+									"    var responseBody = pm.response.json();",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"payload\": {\n    \"name\": \"teste\",\n    \"email\": \"email@mock.com\",\n    \"password\": \"123456789\",\n    \"role\": \"Atendente\",\n    \"department\": \"64412c770f1b24350209a55f\",\n    \"permissionsGroups\": [\n      \"632b5f345799e6d4f81622c6\"\n    ],\n    \"settings\": {\n      \"localization\": \"pt-BR\"\n    },\n    \"url\": \"https://alpha.panel.guide121.com\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{bff-gateway}}/auth/users",
+							"host": [
+								"{{bff-gateway}}"
+							],
+							"path": [
+								"auth",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
