@@ -1,23 +1,23 @@
 ### Estrutura de Pastas
 .
 
-├── .docs/                  # Pasta para armazenar a documentação do Swagger
-├── internal/               # Código fonte da aplicação
-|   ├── domain/             # struck de domínio             
-|   ├── handlers/           # camada HTTP da aplicação
-│       └── modelos         # Arquivo de definição das rotas da API                            
-|   ├── helpers/            # serviços adicionais, middlewares                  
-|   ├── integration/        # Camda de integração                      
-|   ├── service/            # Camda de serviço 
-│   └── routes/             # Definições de rotas
-│       └── routes.go       # Arquivo de definição das rotas da API
-├── postman/                # Arquivos relacionados ao Postman
-│   ├── collections/        # Coleções do Postman
-│   └── environments/       # Ambientes do Postman
-│       ├── local.json      # Ambiente para testes locais
-│       └── live.json       # Ambiente para testes em ambiente live
-├── docker-compose.yml      # Arquivo Docker Compose
-└── README.md               # Este arquivo README
+├── .docs/             # documentação do Swagger
+├── internal/          # Código fonte da aplicação
+|   ├── domain/        # struck de domínio             
+|   ├── handlers/      # camada HTTP da aplicação
+│       └── modelos    # Modelos Handler                            
+|   ├── helpers/       # serviços adicionais, middlewares                  
+|   ├── integration/   # Camada de integração                      
+|   ├── service/       # Camada de serviço 
+│   └── routes/        # Definições de rotas
+│       └── routes.go  # Definição das rotas da API
+├── postman/           # Arquivos relacionados ao Postman
+│   ├── collections/   # Coleções do Postman
+│   └── environments/  # Ambientes do Postman
+│       ├── local.json # Ambiente para testes locais
+│       └── live.json  # Ambiente para testes live
+├── docker-compose.yml # Arquivo Docker Compose
+└── README.md          # Este arquivo README
 
 ### Executar a Aplicação com Docker Compose
 Para executar a aplicação com Docker Compose, use o seguinte comando:
