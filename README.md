@@ -22,17 +22,23 @@
 ├── dockerfile         # Arquivo Docker Compose
 └── README.md          # Este arquivo README
 
+```
 
 ### Executar a Aplicação com Docker Compose
+
 Para executar a aplicação com Docker Compose, use o seguinte comando:
 
-```docker-compose up --build```
-Isso irá compilar e iniciar a aplicação com as configurações definidas no arquivo docker-compose.yml.
+```bash
+docker-compose up --build
 
+```
 #### Gerar Documentação do Swagger
 Para gerar a documentação do Swagger, execute o seguinte comando:
 
-```swag init -g ./internal/routes/routes.go -o .docs/swagger```
+``` 
+swag init -g ./internal/routes/routes.go -o .docs/swagger 
+
+```
 Isso irá gerar a documentação do Swagger com base nas rotas definidas no arquivo routes.go e irá salvá-la na pasta .docs/swagger.
 
 ### Testar a API com Postman
