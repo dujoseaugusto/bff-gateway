@@ -1,6 +1,7 @@
 ### Estrutura de Pastas
-.
 
+```plaintext
+.
 ├── .docs/             # documentação do Swagger
 ├── internal/          # Código fonte da aplicação
 |   ├── domain/        # struck de domínio             
@@ -18,6 +19,7 @@
 │       └── live.json  # Ambiente para testes live
 ├── docker-compose.yml # Arquivo Docker Compose
 └── README.md          # Este arquivo README
+
 
 ### Executar a Aplicação com Docker Compose
 Para executar a aplicação com Docker Compose, use o seguinte comando:
