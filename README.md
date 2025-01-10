@@ -2,7 +2,8 @@
 
 ```plaintext
 .
-├── .docs/             # documentação do Swagger
+├── cmd/               # main da aplicação
+├── docs/              # documentação do Swagger
 ├── internal/          # Código fonte da aplicação
 |   ├── domain/        # struck de domínio             
 |   ├── handlers/      # camada HTTP da aplicação
@@ -18,6 +19,7 @@
 │       ├── local.json # Ambiente para testes locais
 │       └── live.json  # Ambiente para testes live
 ├── docker-compose.yml # Arquivo Docker Compose
+├── dockerfile         # Arquivo Docker Compose
 └── README.md          # Este arquivo README
 
 
